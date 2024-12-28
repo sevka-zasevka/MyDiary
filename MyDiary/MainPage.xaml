@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.MainPage"
+             Title="Diary">
+
+    <StackLayout Padding="10" BackgroundColor="{DynamicResource BackgraundColor}">
+        <Button Text="Change setting" Clicked="ChangeSetting" 
+                FontSize="{DynamicResource FontSize2}" FontFamily="{DynamicResource FontFamily}"
+                BackgroundColor="{DynamicResource BackgraundColorButton}"
+                TextColor="{DynamicResource TextColorButton}"/>
+        <SearchBar x:Name="NotesSearchBar" Placeholder="Search" 
+                   PlaceholderColor="#483D8B" FontSize="{DynamicResource FontSize2}" 
+                   FontFamily="{DynamicResource FontFamily}"/>
+
+
+        <CollectionView x:Name="NotesCollectionView" SelectionMode="Single" 
+                        ItemsSource="{Binding Notes}" SelectedItem="{Binding SelectedNote}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout >
+                        <Label Text="{Binding Title}" FontSize="{DynamicResource FontSize1}" 
+                               FontFamily="{DynamicResource FontFamily}" 
+                               TextColor="{DynamicResource TextColorLabel}"/>
+                        <Label Text="{Binding DateTime}" FontSize="{DynamicResource FontSize2}" 
+                               FontFamily="{DynamicResource FontFamily}" 
+                               TextColor="{DynamicResource TextColorLabel}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Create a new note" Clicked="CreateNewNote" 
+                FontSize="{DynamicResource FontSize2}" FontFamily="{DynamicResource FontFamily}"
+                BackgroundColor="{DynamicResource BackgraundColorButton}"
+                TextColor="{DynamicResource TextColorButton}"/>
+        <Button Text="Edit a note" Clicked="EditNote" FontSize="{DynamicResource FontSize2}" 
+                FontFamily="{DynamicResource FontFamily}" TextColor="{DynamicResource TextColorButton}"
+                BackgroundColor="{DynamicResource BackgraundColorButton}"/>
+        <Button Text="Delete a note" Clicked="DeleteNote" FontSize="{DynamicResource FontSize2}" 
+                FontFamily="{DynamicResource FontFamily}" TextColor="{DynamicResource TextColorButton}"
+                BackgroundColor="{DynamicResource BackgraundColorButton}"/>
+    </StackLayout>
+</ContentPage>

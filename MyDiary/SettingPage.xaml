@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.SettingPage"
+             Title="SettingPage">
+    <StackLayout Padding="10" BackgroundColor="{DynamicResource BackgraundColor}">
+        <DatePicker Date ="{Binding Data}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"/>
+        <Label Text="Choose background color" TextColor="{DynamicResource TextColorLabel}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"/>
+        <Picker SelectedItem ="{Binding Color}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}">
+            <Picker.Items >
+                <x:String>Black</x:String>
+                <x:String>Green</x:String>
+                <x:String>Pink</x:String>
+                <x:String>Blue</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Choose font size" TextColor="{DynamicResource TextColorLabel}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"/>
+        <Picker SelectedItem ="{Binding Size}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}">
+            <Picker.Items>
+                <x:String>Small</x:String>
+                <x:String>Medium</x:String>
+                <x:String>Large</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Choose font style" TextColor="{DynamicResource TextColorLabel}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"/>
+        <Picker SelectedItem ="{Binding Stile}"
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}">
+            <Picker.Items>
+                <x:String>Verdana</x:String>
+                <x:String>Helvetica</x:String>
+                <x:String>Times New Roman</x:String>
+                <x:String>Arial</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="Save style" Clicked="SaveStyle" FontSize="{DynamicResource FontSize2}" 
+                FontFamily="{DynamicResource FontFamily}" TextColor="{DynamicResource TextColorButton}"
+                BackgroundColor="{DynamicResource BackgraundColorButton}"/>
+        <Button Text="Normal style" Clicked="RestorStyle" FontSize="{DynamicResource FontSize2}" 
+                FontFamily="{DynamicResource FontFamily}" TextColor="{DynamicResource TextColorButton}"
+                BackgroundColor="{DynamicResource BackgraundColorButton}"/>
+    </StackLayout>
+</ContentPage>

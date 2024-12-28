@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyDiary.NotePage"
+             Title="Create Note">
+    <StackLayout Padding="20" BackgroundColor="{DynamicResource BackgraundColor}">
+        <Entry x:Name="TitleEntry" Text ="{Binding Title}" Placeholder="Title" 
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"
+               TextColor="{DynamicResource TextColorLabel}"/>
+        <Editor x:Name="TextEditor" Text ="{Binding Text}" Placeholder="Write a text..."
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"
+               TextColor="{DynamicResource TextColorLabel}"/>
+
+        <StackLayout Orientation="Horizontal">
+            <DatePicker Date ="{Binding dt}" Grid.Column="0" 
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"/>
+            <TimePicker Time ="{Binding tod}" Grid.Column="1" 
+               FontSize="{DynamicResource FontSize2}" 
+               FontFamily="{DynamicResource FontFamily}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Cancel" Clicked="CancelClicked" 
+                    FontSize="{DynamicResource FontSize2}" 
+                    FontFamily="{DynamicResource FontFamily}" 
+                    BackgroundColor="{DynamicResource BackgraundColorButton}"
+                    TextColor="{DynamicResource TextColorButton}"/>
+            <Button Text="Save" Clicked="SaveClicked"
+                    FontSize="{DynamicResource FontSize2}" 
+                    FontFamily="{DynamicResource FontFamily}" 
+                    BackgroundColor="{DynamicResource BackgraundColorButton}"
+                    TextColor="{DynamicResource TextColorButton}"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
+    
+    
